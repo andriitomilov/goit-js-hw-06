@@ -1,9 +1,9 @@
 const categories = document.querySelectorAll(".item");
 
 console.log(`Number of categories: ${categories.length}`);
-calculateCNumberOfCatagories(categories);
+calculateNumberOfCatagories(categories);
 
-function calculateCNumberOfCatagories(categories) {
+function calculateNumberOfCatagories(categories) {
   categories.forEach((category) => {
     const titleEl = category.querySelector("h2");
     const listEl = category.querySelectorAll("li");
