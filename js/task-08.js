@@ -1,11 +1,5 @@
 const form = document.querySelector(".login-form");
 
-// console.log(refs.form);
-
-// console.log(refs.submitBtn);
-
-// console.log(refs.inputList);
-
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
