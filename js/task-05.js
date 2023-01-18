@@ -4,6 +4,7 @@ const refs = {
 };
 
 refs.inputField.value = "";
+refs.outputField.textContent = "Anonymous";
 refs.inputField.addEventListener("input", onChangeOutputField);
 
 function onChangeOutputField(event) {
