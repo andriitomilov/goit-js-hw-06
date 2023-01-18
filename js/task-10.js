@@ -6,11 +6,18 @@ const refs = {
   destroyBtn: document.querySelector("button[data-destroy]"),
 };
 // вішаємо на кнопки слухача подій
-refs.createBtn.addEventListener("click", createBoxes);
+refs.createBtn.addEventListener("click", onClickCreateElements);
 refs.destroyBtn.addEventListener("click", destroyBoxes);
-// функція створення елементів
-function createBoxes() {
+
+
+// функція, яка ініціалізує створення елементів і очищення інпута
+function onClickCreateElements() {
   const amount = refs.controlsContainer.firstElementChild.value;
+  createBoxes(amount);
+  clearInputValue();
+}
+// функція створення елементів
+function createBoxes(amount) {
   const elementsToAdd = [];
 
   for (let i = 0; i < amount; i += 1) {
@@ -25,7 +32,6 @@ function createBoxes() {
   }
 
   refs.boxesContainer.append(...elementsToAdd);
-  clearInputValue();
 }
 
 // функція очищення div id="boxes"
