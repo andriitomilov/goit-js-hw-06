@@ -4,14 +4,16 @@ inputRef.addEventListener("blur", onCheckLengthOfInput);
 inputRef.addEventListener("focus", onFocusRemoveClass);
 
 function onCheckLengthOfInput(event) {
-  const validLength = inputRef.dataset.length;
+  const validLength = Number(inputRef.dataset.length);
   const currentLength = event.currentTarget.value.length;
+
+  console.log(typeof validLength, typeof currentLength);
 
   if (currentLength === 0) {
     return;
   }
 
-  inputRef.classList.add(currentLength > validLength ? "invalid" : "valid");
+  inputRef.classList.add(currentLength === validLength ? "valid" : "invalid");
 }
 
 function onFocusRemoveClass() {
