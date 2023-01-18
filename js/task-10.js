@@ -9,7 +9,6 @@ const refs = {
 refs.createBtn.addEventListener("click", onClickCreateElements);
 refs.destroyBtn.addEventListener("click", destroyBoxes);
 
-
 // функція, яка ініціалізує створення елементів і очищення інпута
 function onClickCreateElements() {
   const amount = refs.controlsContainer.firstElementChild.value;
