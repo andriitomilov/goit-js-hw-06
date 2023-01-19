@@ -7,11 +7,11 @@ function onFormSubmit(event) {
 
   const formElements = event.currentTarget.elements;
 
-  if (formElements.email.value === "" && formElements.password.value === "") {
+  if (!formElements.email.value && !formElements.password.value) {
     alert("Enter email and password");
-  } else if (formElements.email.value === "") {
+  } else if (!formElements.email.value) {
     alert("Enter email");
-  } else if (formElements.password.value === "") {
+  } else if (!formElements.password.value) {
     alert("Enter password");
   } else {
     const dataForm = new FormData(event.currentTarget);

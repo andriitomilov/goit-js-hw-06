@@ -1,7 +1,7 @@
 // 1. доступ до кнопок, поля вводу та поля створення елементів
 const refs = {
   boxesContainer: document.querySelector("#boxes"),
-  controlsContainer: document.querySelector("#controls"),
+  controlsContainer: document.querySelector("#controls input"),
   createBtn: document.querySelector("button[data-create]"),
   destroyBtn: document.querySelector("button[data-destroy]"),
 };
@@ -11,7 +11,7 @@ refs.destroyBtn.addEventListener("click", destroyBoxes);
 
 // функція, яка ініціалізує створення елементів і очищення інпута
 function onClickCreateElements() {
-  const amount = refs.controlsContainer.firstElementChild.value;
+  const amount = refs.controlsContainer.value;
   createBoxes(amount);
   clearInputValue();
 }
@@ -27,7 +27,7 @@ function createBoxes(amount) {
     divEl.style.backgroundColor = getRandomHexColor();
 
     elementsToAdd.push(divEl);
-    refs.controlsContainer.firstElementChild.value = "";
+    refs.controlsContainer.value = "";
   }
 
   refs.boxesContainer.append(...elementsToAdd);
@@ -41,7 +41,7 @@ function destroyBoxes() {
 
 // очищення поля ввода
 function clearInputValue() {
-  refs.controlsContainer.firstElementChild.value = "";
+  refs.controlsContainer.value = "";
 }
 
 // функція отримання рандомного кольору
